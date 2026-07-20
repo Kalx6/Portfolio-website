@@ -9,10 +9,7 @@ const envSchema = z.object({
     .default("development"),
   DATABASE_URL: z.string().min(1, "DATABASE_URL is required"),
   CORS_ORIGIN: z.string().min(1, "CORS_ORIGIN is required"),
-  EMAIL_HOST: z.string().min(1),
-  EMAIL_PORT: z.coerce.number(),
-  EMAIL_USER: z.string().min(1),
-  EMAIL_PASS: z.string().min(1),
+  RESEND_API_KEY: z.string().min(1, "RESEND_API_KEY is required"),
   EMAIL_TO: z.string().email(),
   GEMINI_API_KEY: z.string().min(1, "GEMINI_API_KEY is required"),
 });

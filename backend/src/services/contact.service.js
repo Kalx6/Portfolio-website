@@ -1,16 +1,8 @@
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
 import { env } from "../config/env.js";
 import { saveContactMessage } from "../repositories/contact.repository.js";
 
-const transporter = nodemailer.createTransport({
-  host: env.EMAIL_HOST,
-  port: env.EMAIL_PORT,
-  secure: env.EMAIL_PORT === 465,
-  auth: {
-    user: env.EMAIL_USER,
-    pass: env.EMAIL_PASS,
-  },
-});
+const resend = new Resend(env.RESEND_API_KEY);
 
 export async function submitContactMessage({
   name,
@@ -20,8 +12,8 @@ export async function submitContactMessage({
 }) {
   const saved = await saveContactMessage({ name, email, message, ipAddress });
 
-  await transporter.sendMail({
-    from: `"Portfolio Contact Form" <${env.EMAIL_USER}>`,
+  await resend.emails.send({
+    from: "Portfolio Contact Form <onboarding@resend.dev>",
     to: env.EMAIL_TO,
     replyTo: email,
     subject: `New message from ${name}`,
