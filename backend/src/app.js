@@ -7,6 +7,7 @@ import contactRouter from "./routes/contact.routes.js";
 import chatRouter from "./routes/chat.routes.js";
 
 export const app = express();
+app.set("trust proxy", 1);
 
 app.use(helmet());
 app.use(cors({ origin: env.CORS_ORIGIN }));
