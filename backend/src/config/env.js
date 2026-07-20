@@ -14,6 +14,7 @@ const envSchema = z.object({
   EMAIL_USER: z.string().min(1),
   EMAIL_PASS: z.string().min(1),
   EMAIL_TO: z.string().email(),
+  GEMINI_API_KEY: z.string().min(1, "GEMINI_API_KEY is required"),
 });
 
 const parsed = envSchema.safeParse(process.env);
