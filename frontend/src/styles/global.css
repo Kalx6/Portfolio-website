@@ -10,7 +10,7 @@ html {
 
 body {
   font-family: var(--font-sans);
-  @apply bg-slate-900 text-slate-50 antialiased;
+  @apply bg-neutral-950 text-neutral-50 antialiased;
 }
 
 :focus-visible {

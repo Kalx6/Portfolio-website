@@ -18,7 +18,7 @@ function Hero() {
         {...fadeUp(0)}
         src={profileImage}
         alt="Portrait of Khalid Abdulkerim"
-        className="w-24 h-24 rounded-full object-cover border border-slate-700 mb-6"
+        className="w-24 h-24 rounded-full object-cover border border-neutral-800 mb-6"
       />
 
       <motion.p
@@ -30,14 +30,14 @@ function Hero() {
 
       <motion.h1
         {...fadeUp(0.2)}
-        className="text-4xl md:text-5xl font-bold text-slate-50 mb-6"
+        className="text-4xl md:text-5xl font-bold text-neutral-50 mb-6"
       >
         Full Stack Developer
       </motion.h1>
 
       <motion.p
         {...fadeUp(0.3)}
-        className="text-slate-300 text-base md:text-lg mb-8 max-w-xl"
+        className="text-neutral-300 text-base md:text-lg mb-8 max-w-xl"
       >
         Building scalable, production-ready web applications with clean
         architecture and meticulous attention to detail. Engineering software
@@ -50,13 +50,13 @@ function Hero() {
       >
         <a
           href="#projects"
-          className="bg-amber-700 hover:bg-amber-600 text-slate-50 font-semibold px-6 py-3 rounded-md transition-colors duration-200"
+          className="bg-amber-700 hover:bg-amber-600 text-neutral-50 font-semibold px-6 py-3 rounded-md transition-colors duration-200"
         >
           View Projects
         </a>
         <a
           href="#contact"
-          className="border border-slate-700 hover:border-slate-500 text-slate-50 font-semibold px-6 py-3 rounded-md transition-colors duration-200"
+          className="border border-neutral-800 hover:border-neutral-500 hover:text-amber-600 text-neutral-50 font-semibold px-6 py-3 rounded-md transition-colors duration-200"
         >
           Contact Me
         </a>
@@ -70,7 +70,7 @@ function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={label}
-            className="flex items-center gap-2 text-slate-300 hover:text-slate-50 text-sm transition-colors duration-200"
+            className="flex items-center gap-2 text-neutral-300 hover:text-amber-600 text-sm transition-colors duration-200"
           >
             <Icon size={16} />
             {label}

@@ -16,11 +16,11 @@ function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-slate-700 px-6 py-8">
+    <footer className="border-t border-neutral-800 px-6 py-8">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
-        <p className="text-slate-50 font-semibold">Khalid Abdulkerim</p>
+        <p className="text-neutral-50 font-semibold">Khalid Abdulkerim</p>
 
-        <p className="text-slate-400 text-xs order-3 md:order-2">
+        <p className="text-neutral-400 text-xs order-3 md:order-2">
           © {currentYear} Khalid Abdulkerim. Engineered for performance.
         </p>
 
@@ -32,7 +32,7 @@ function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={label}
-              className="flex items-center gap-1.5 text-slate-400 hover:text-slate-50 transition-colors duration-200"
+              className="flex items-center gap-1.5 text-neutral-400 hover:text-amber-600 transition-colors duration-200"
             >
               <Icon size={14} />
               {label}

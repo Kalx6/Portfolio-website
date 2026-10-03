@@ -18,16 +18,16 @@ function Navbar() {
     <header
       className={`sticky top-0 z-50 border-b transition-colors duration-200 ${
         isScrolled
-          ? "bg-slate-900/95 backdrop-blur-sm border-slate-700"
-          : "bg-slate-900 border-transparent"
+          ? "bg-neutral-950/95 backdrop-blur-sm border-neutral-800"
+          : "bg-neutral-950 border-transparent"
       }`}
     >
       <nav className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-3 items-center px-6 py-4">
         <a
           href="#home"
-          className="flex items-center gap-2 text-slate-50 font-semibold justify-self-start"
+          className="flex items-center gap-2 text-neutral-50 font-semibold justify-self-start"
         >
-          <img src="/logo.png" alt="KA logo" className="w-9 h-9 rounded-md" />
+          <img src="/logo-1.png" alt="KA logo" className="w-9 h-9 rounded-md" />
 
           <span>Kalid Abdulkerim</span>
         </a>
@@ -37,7 +37,7 @@ function Navbar() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="text-sm text-slate-300 hover:text-slate-50 transition-colors duration-200"
+                className="text-sm lg:text-base font-semibold  text-neutral-300 hover:text-amber-600 transition-colors duration-200"
               >
                 {link.label}
               </a>
@@ -49,13 +49,13 @@ function Navbar() {
           href="/resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden md:inline-block bg-amber-700 hover:bg-amber-600 text-slate-50 text-sm font-semibold px-5 py-2 rounded-md transition-colors duration-200 justify-self-end"
+          className="hidden md:inline-block bg-amber-700 hover:bg-amber-600 text-neutral-50 text-sm font-semibold px-5 py-2 rounded-md transition-colors duration-200 justify-self-end"
         >
           Resume
         </a>
 
         <button
-          className="md:hidden justify-self-end text-slate-50 cursor-pointer"
+          className="md:hidden justify-self-end text-neutral-50 cursor-pointer"
           onClick={() => setIsMobileMenuOpen((prev) => !prev)}
           aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={isMobileMenuOpen}
@@ -65,14 +65,14 @@ function Navbar() {
       </nav>
 
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-slate-900 border-t border-slate-700 px-6 py-4">
+        <div className="md:hidden bg-neutral-950 border-t border-neutral-800 px-6 py-4">
           <ul className="flex flex-col gap-4">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
                   onClick={closeMobileMenu}
-                  className="block text-slate-300 hover:text-slate-50 transition-colors duration-200"
+                  className="block text-neutral-300 hover:text-neutral-50 transition-colors duration-200"
                 >
                   {link.label}
                 </a>
@@ -83,7 +83,7 @@ function Navbar() {
                 href="/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-amber-700 hover:bg-amber-600 text-slate-50 text-sm font-semibold px-5 py-2 rounded-md transition-colors duration-200"
+                className="inline-block bg-amber-700 hover:bg-amber-600 text-neutral-50 text-sm font-semibold px-5 py-2 rounded-md transition-colors duration-200"
               >
                 Resume
               </a>

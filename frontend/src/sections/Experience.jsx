@@ -13,12 +13,12 @@ function Experience() {
     <section id="experience" className="px-6 py-24 max-w-4xl mx-auto">
       <motion.h2
         {...fadeUp(0)}
-        className="text-3xl md:text-4xl font-bold text-slate-50 text-center mb-16"
+        className="text-3xl md:text-4xl font-bold text-neutral-50 text-center mb-16"
       >
         Professional Journey
       </motion.h2>
 
-      <ol className="relative border-l border-slate-700 ml-3">
+      <ol className="relative border-l border-neutral-800 ml-3">
         {EXPERIENCE.map((entry, index) => (
           <motion.li
             key={entry.company}
@@ -27,17 +27,17 @@ function Experience() {
           >
             <span
               className={`absolute w-3 h-3 rounded-full -left-1.5 mt-1.5 ${
-                index === 0 ? "bg-amber-700" : "bg-slate-600"
+                index === 0 ? "bg-amber-700" : "bg-neutral-700"
               }`}
             />
-            <time className="text-xs text-slate-400 uppercase tracking-wide">
+            <time className="text-xs text-neutral-400 uppercase tracking-wide">
               {entry.period}
             </time>
-            <h3 className="text-slate-50 font-semibold text-lg mt-1">
+            <h3 className="text-neutral-50 font-semibold text-lg mt-1">
               {entry.role}
             </h3>
             <p className="text-amber-700 text-sm mb-2">{entry.company}</p>
-            <p className="text-slate-300 text-sm leading-relaxed">
+            <p className="text-neutral-300 text-sm leading-relaxed">
               {entry.description}
             </p>
           </motion.li>

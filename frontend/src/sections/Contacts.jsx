@@ -39,11 +39,11 @@ function Contact() {
     <section id="contact" className="px-6 py-24 max-w-4xl mx-auto">
       <motion.h2
         {...fadeUp(0)}
-        className="text-3xl md:text-4xl font-bold text-slate-50 mb-4"
+        className="text-3xl md:text-4xl font-bold text-neutral-50 mb-4"
       >
         Get in Touch
       </motion.h2>
-      <motion.p {...fadeUp(0.1)} className="text-slate-300 mb-12 max-w-xl">
+      <motion.p {...fadeUp(0.1)} className="text-neutral-300 mb-12 max-w-xl">
         Interested in collaborating or have a project in mind? Let's discuss how
         we can build something exceptional together.
       </motion.p>
@@ -51,26 +51,26 @@ function Contact() {
       <div className="grid md:grid-cols-2 gap-12">
         <motion.div {...fadeUp(0.2)} className="space-y-6">
           <div className="flex items-start gap-4">
-            <div className="w-10 h-10 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-amber-700 shrink-0">
+            <div className="w-10 h-10 rounded-lg bg-neutral-900 border border-neutral-800 flex items-center justify-center text-amber-700 shrink-0">
               <MapPin size={18} />
             </div>
             <div>
-              <p className="text-slate-400 text-xs uppercase tracking-wide mb-1">
+              <p className="text-neutral-400 text-xs uppercase tracking-wide mb-1">
                 Location
               </p>
-              <p className="text-slate-50 text-sm">Addis Ababa, Ethiopia</p>
+              <p className="text-neutral-50 text-sm">Adama, Ethiopia</p>
             </div>
           </div>
 
           <div className="flex items-start gap-4">
-            <div className="w-10 h-10 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-amber-700 shrink-0">
+            <div className="w-10 h-10 rounded-lg bg-neutral-900 border border-neutral-800 flex items-center justify-center text-amber-700 shrink-0">
               <Mail size={18} />
             </div>
             <div>
-              <p className="text-slate-400 text-xs uppercase tracking-wide mb-1">
+              <p className="text-neutral-400 text-xs uppercase tracking-wide mb-1">
                 Email
               </p>
-              <p className="text-slate-50 text-sm">kalidabdu921@gmail.com</p>
+              <p className="text-neutral-50 text-sm">kalidabdu921@gmail.com</p>
             </div>
           </div>
         </motion.div>
@@ -82,7 +82,10 @@ function Contact() {
           className="space-y-5"
         >
           <div>
-            <label htmlFor="name" className="block text-slate-300 text-sm mb-2">
+            <label
+              htmlFor="name"
+              className="block text-neutral-300 text-sm mb-2"
+            >
               Name
             </label>
             <input
@@ -95,7 +98,7 @@ function Contact() {
                   message: "Name must be at least 2 characters",
                 },
               })}
-              className="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-2.5 text-slate-50 text-sm focus:border-amber-700 focus:outline-none transition-colors duration-200"
+              className="w-full bg-neutral-900 border border-neutral-800 rounded-lg px-4 py-2.5 text-neutral-50 text-sm focus:border-amber-700 focus:outline-none transition-colors duration-200"
               aria-invalid={errors.name ? "true" : "false"}
             />
             {errors.name && (
@@ -108,7 +111,7 @@ function Contact() {
           <div>
             <label
               htmlFor="email"
-              className="block text-slate-300 text-sm mb-2"
+              className="block text-neutral-300 text-sm mb-2"
             >
               Email
             </label>
@@ -122,7 +125,7 @@ function Contact() {
                   message: "Please enter a valid email",
                 },
               })}
-              className="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-2.5 text-slate-50 text-sm focus:border-amber-700 focus:outline-none transition-colors duration-200"
+              className="w-full bg-neutral-900 border border-neutral-800 rounded-lg px-4 py-2.5 text-neutral-50 text-sm focus:border-amber-700 focus:outline-none transition-colors duration-200"
               aria-invalid={errors.email ? "true" : "false"}
             />
             {errors.email && (
@@ -135,7 +138,7 @@ function Contact() {
           <div>
             <label
               htmlFor="message"
-              className="block text-slate-300 text-sm mb-2"
+              className="block text-neutral-300 text-sm mb-2"
             >
               Message
             </label>
@@ -149,7 +152,7 @@ function Contact() {
                   message: "Message must be at least 10 characters",
                 },
               })}
-              className="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-2.5 text-slate-50 text-sm focus:border-amber-700 focus:outline-none transition-colors duration-200 resize-none"
+              className="w-full bg-neutral-900 border border-neutral-800 rounded-lg px-4 py-2.5 text-neutral-50 text-sm focus:border-amber-700 focus:outline-none transition-colors duration-200 resize-none"
               aria-invalid={errors.message ? "true" : "false"}
             />
             {errors.message && (
@@ -162,7 +165,7 @@ function Contact() {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-amber-700 hover:bg-amber-600 disabled:opacity-60 disabled:cursor-not-allowed text-slate-50 font-semibold py-3 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2"
+            className="w-full bg-amber-700 hover:bg-amber-600 disabled:opacity-60 disabled:cursor-not-allowed text-neutral-50 font-semibold py-3 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2"
           >
             {isSubmitting ? (
               <>

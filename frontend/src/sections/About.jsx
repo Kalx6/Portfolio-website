@@ -12,14 +12,14 @@ function About() {
     <section id="about" className="px-6 py-24 max-w-4xl mx-auto">
       <motion.h2
         {...fadeUp(0)}
-        className="text-3xl md:text-4xl font-bold text-slate-50 mb-8"
+        className="text-3xl md:text-4xl font-bold text-neutral-50 mb-8"
       >
         About Me
       </motion.h2>
 
       <motion.div
         {...fadeUp(0.1)}
-        className="space-y-6 text-slate-300 text-base md:text-lg leading-relaxed"
+        className="space-y-6 text-neutral-300 text-base md:text-lg leading-relaxed"
       >
         <p>
           I'm Khalid Abdulkerim, a Full Stack Web Developer who enjoys turning

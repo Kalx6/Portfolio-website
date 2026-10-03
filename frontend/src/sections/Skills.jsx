@@ -12,10 +12,10 @@ function Skills() {
   return (
     <section id="skills" className="px-6 py-24 max-w-6xl mx-auto">
       <motion.div {...fadeUp(0)} className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold text-slate-50 mb-3">
+        <h2 className="text-3xl md:text-4xl font-bold text-neutral-50 mb-3">
           Technical Proficiency
         </h2>
-        <p className="text-slate-300 text-base md:text-lg">
+        <p className="text-neutral-300 text-base md:text-lg">
           Specialized toolkit for building modern, full-stack web applications.
         </p>
       </motion.div>
@@ -25,17 +25,17 @@ function Skills() {
           <motion.div
             key={category}
             {...fadeUp(0.1 + index * 0.1)}
-            className="bg-slate-800 border border-slate-700 rounded-xl p-6 hover:-translate-y-1 transition-transform duration-200"
+            className="bg-neutral-900 border border-neutral-800 rounded-xl p-6 hover:-translate-y-1 transition-transform duration-200"
           >
-            <div className="w-10 h-10 rounded-lg bg-slate-900 border border-slate-700 flex items-center justify-center text-amber-700 mb-4">
+            <div className="w-10 h-10 rounded-lg bg-neutral-950 border border-neutral-800 flex items-center justify-center text-amber-700 mb-4">
               <Icon size={20} />
             </div>
-            <h3 className="text-slate-50 font-semibold text-lg mb-3">
+            <h3 className="text-neutral-50 font-semibold text-lg mb-3">
               {category}
             </h3>
             <ul className="space-y-2">
               {items.map((item) => (
-                <li key={item} className="text-slate-400 text-sm">
+                <li key={item} className="text-neutral-400 text-sm">
                   {item}
                 </li>
               ))}

@@ -15,7 +15,7 @@ function ProjectImage({ image, title }) {
   // Placeholder until real screenshots are added — keeps layout intact either way.
   if (!image) {
     return (
-      <div className="w-full h-full min-h-48 bg-gradient-to-br from-slate-700 to-slate-800 flex items-center justify-center text-slate-500 text-sm">
+      <div className="w-full h-full min-h-48 bg-gradient-to-br from-neutral-800 to-neutral-900 flex items-center justify-center text-neutral-500 text-sm">
         Image coming soon
       </div>
     );
@@ -31,7 +31,7 @@ function FeaturedProjects() {
     <section id="projects" className="px-6 py-24 max-w-6xl mx-auto">
       <motion.h2
         {...fadeUp(0)}
-        className="text-3xl md:text-4xl font-bold text-slate-50 mb-12"
+        className="text-3xl md:text-4xl font-bold text-neutral-50 mb-12"
       >
         Featured Projects
       </motion.h2>
@@ -39,7 +39,7 @@ function FeaturedProjects() {
       {featuredProject && (
         <motion.div
           {...fadeUp(0.1)}
-          className="bg-slate-800 border border-slate-700 rounded-xl overflow-hidden grid md:grid-cols-2 mb-8"
+          className="bg-neutral-900 border border-neutral-800 rounded-xl overflow-hidden grid md:grid-cols-2 mb-8"
         >
           <div className="h-64 md:h-auto">
             <ProjectImage
@@ -60,10 +60,10 @@ function FeaturedProjects() {
               ))}
             </div>
 
-            <h3 className="text-2xl font-bold text-slate-50 mb-3">
+            <h3 className="text-2xl font-bold text-neutral-50 mb-3">
               {featuredProject.title}
             </h3>
-            <p className="text-slate-300 text-sm leading-relaxed mb-6">
+            <p className="text-neutral-300 text-sm leading-relaxed mb-6">
               {featuredProject.description}
             </p>
 
@@ -72,7 +72,7 @@ function FeaturedProjects() {
                 href={featuredProject.liveDemo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1.5 text-sm text-slate-50 hover:text-amber-700 transition-colors duration-200"
+                className="flex items-center gap-1.5 text-sm text-neutral-50 hover:text-amber-700 transition-colors duration-200"
               >
                 <ExternalLink size={14} /> Live Demo
               </a>
@@ -80,7 +80,7 @@ function FeaturedProjects() {
                 href={featuredProject.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1.5 text-sm text-slate-300 hover:text-amber-700 transition-colors duration-200"
+                className="flex items-center gap-1.5 text-sm text-neutral-300 hover:text-amber-700 transition-colors duration-200"
               >
                 <SiGithub size={14} /> Source Code
               </a>
@@ -94,19 +94,19 @@ function FeaturedProjects() {
           <motion.div
             key={project.id}
             {...fadeUp(0.2 + index * 0.1)}
-            className="group bg-slate-800 border border-slate-700 rounded-xl overflow-hidden hover:-translate-y-1 transition-transform duration-200"
+            className="group bg-neutral-900 border border-neutral-800 rounded-xl overflow-hidden hover:-translate-y-1 transition-transform duration-200"
           >
             <div className="h-40">
               <ProjectImage image={project.image} title={project.title} />
             </div>
             <div className="p-6">
-              <h3 className="text-slate-50  font-semibold text-lg mb-2">
+              <h3 className="text-neutral-50  font-semibold text-lg mb-2">
                 {project.title}
               </h3>
-              <p className="text-slate-300 text-sm mb-4">
+              <p className="text-neutral-300 text-sm mb-4">
                 {project.description}
               </p>
-              <span className="text-xs text-slate-400 uppercase tracking-wide block mb-4">
+              <span className="text-xs text-neutral-400 uppercase tracking-wide block mb-4">
                 {project.tech.join(" · ")}
               </span>
               <div className="flex items-center gap-4">
@@ -114,7 +114,7 @@ function FeaturedProjects() {
                   href={project.liveDemo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 text-xs text-slate-300 hover:text-amber-700 transition-colors duration-200"
+                  className="flex items-center gap-1.5 text-xs text-neutral-300 hover:text-amber-700 transition-colors duration-200"
                 >
                   <ExternalLink size={13} /> Live Demo
                 </a>
@@ -122,7 +122,7 @@ function FeaturedProjects() {
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 text-xs text-slate-300 hover:text-amber-700 transition-colors duration-200"
+                  className="flex items-center gap-1.5 text-xs text-neutral-300 hover:text-amber-700 transition-colors duration-200"
                 >
                   <SiGithub size={13} /> Code
                 </a>

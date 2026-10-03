@@ -52,7 +52,7 @@ function ChatWidget() {
       <button
         onClick={() => setIsOpen((prev) => !prev)}
         aria-label={isOpen ? "Close chat" : "Open chat about Khalid"}
-        className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-amber-700 hover:bg-amber-600 text-slate-50 flex items-center justify-center shadow-lg transition-colors duration-200"
+        className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-amber-700 hover:bg-amber-600 text-neutral-50 flex items-center justify-center shadow-lg transition-colors duration-200"
       >
         {isOpen ? <X size={22} /> : <MessageCircle size={22} />}
       </button>
@@ -64,14 +64,14 @@ function ChatWidget() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 16, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="fixed bottom-24 right-6 z-50 w-[calc(100vw-3rem)] sm:w-96 h-[500px] max-h-[70vh] bg-slate-800 border border-slate-700 rounded-2xl shadow-2xl flex flex-col overflow-hidden"
+            className="fixed bottom-24 right-6 z-50 w-[calc(100vw-3rem)] sm:w-96 h-[500px] max-h-[70vh] bg-neutral-900 border border-neutral-800 rounded-2xl shadow-2xl flex flex-col overflow-hidden"
           >
             {/* Header */}
-            <div className="px-5 py-4 border-b border-slate-700">
-              <p className="text-slate-50 font-semibold text-sm">
+            <div className="px-5 py-4 border-b border-neutral-800">
+              <p className="text-neutral-50 font-semibold text-sm">
                 Ask about Khalid
               </p>
-              <p className="text-slate-400 text-xs">
+              <p className="text-neutral-400 text-xs">
                 AI assistant · powered by RAG + Gemini
               </p>
             </div>
@@ -86,8 +86,8 @@ function ChatWidget() {
                   <p
                     className={`max-w-[85%] text-sm rounded-lg px-3.5 py-2.5 ${
                       message.role === "user"
-                        ? "bg-amber-700 text-slate-50"
-                        : "bg-slate-900 text-slate-300 border border-slate-700"
+                        ? "bg-amber-700 text-neutral-50"
+                        : "bg-neutral-950 text-neutral-300 border border-neutral-800"
                     }`}
                   >
                     {message.text}
@@ -97,10 +97,10 @@ function ChatWidget() {
 
               {isLoading && (
                 <div className="flex justify-start">
-                  <div className="bg-slate-900 border border-slate-700 rounded-lg px-3.5 py-2.5">
+                  <div className="bg-neutral-950 border border-neutral-800 rounded-lg px-3.5 py-2.5">
                     <Loader2
                       size={14}
-                      className="animate-spin text-slate-400"
+                      className="animate-spin text-neutral-400"
                     />
                   </div>
                 </div>
@@ -112,7 +112,7 @@ function ChatWidget() {
             {/* Input */}
             <form
               onSubmit={handleSubmit}
-              className="flex items-center gap-2 p-4 border-t border-slate-700"
+              className="flex items-center gap-2 p-4 border-t border-neutral-800"
             >
               <input
                 type="text"
@@ -120,13 +120,13 @@ function ChatWidget() {
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Ask a question..."
                 disabled={isLoading}
-                className="flex-1 bg-slate-900 border border-slate-700 rounded-lg px-3.5 py-2.5 text-slate-50 text-sm focus:border-amber-700 focus:outline-none transition-colors duration-200 disabled:opacity-60"
+                className="flex-1 bg-neutral-950 border border-neutral-800 rounded-lg px-3.5 py-2.5 text-neutral-50 text-sm focus:border-amber-700 focus:outline-none transition-colors duration-200 disabled:opacity-60"
               />
               <button
                 type="submit"
                 disabled={isLoading || !input.trim()}
                 aria-label="Send message"
-                className="w-10 h-10 rounded-lg bg-amber-700 hover:bg-amber-600 disabled:opacity-40 disabled:cursor-not-allowed text-slate-50 flex items-center justify-center transition-colors duration-200 shrink-0"
+                className="w-10 h-10 rounded-lg bg-amber-700 hover:bg-amber-600 disabled:opacity-40 disabled:cursor-not-allowed text-neutral-50 flex items-center justify-center transition-colors duration-200 shrink-0"
               >
                 <Send size={16} />
               </button>
