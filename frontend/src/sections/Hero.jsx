@@ -25,7 +25,7 @@ function Hero() {
         {...fadeUp(0.1)}
         className="text-amber-700 text-xs font-medium tracking-widest uppercase mb-4"
       >
-        Hi, I'm Khalid Abdulkerim
+        Hi, I'm Kalid Abdulkerim
       </motion.p>
 
       <motion.h1

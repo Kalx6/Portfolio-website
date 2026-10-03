@@ -27,10 +27,9 @@ function Navbar() {
           href="#home"
           className="flex items-center gap-2 text-slate-50 font-semibold justify-self-start"
         >
-          <span className="w-8 h-8 rounded-md bg-slate-800 border border-slate-700 flex items-center justify-center text-amber-700 text-sm">
-            KA
-          </span>
-          <span>Khalid Abdulkerim</span>
+          <img src="/logo.png" alt="KA logo" className="w-9 h-9 rounded-md" />
+
+          <span>Kalid Abdulkerim</span>
         </a>
 
         <ul className="hidden md:flex items-center gap-8 justify-self-center">

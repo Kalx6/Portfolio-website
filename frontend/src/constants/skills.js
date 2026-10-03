@@ -7,8 +7,7 @@ export const SKILLS = [
     items: [
       "React / Vite",
       "JavaScript (ES6+)",
-      "Tailwind CSS",
-      "Framer Motion",
+      "Tailwind CSS"
     ],
   },
   {
@@ -17,18 +16,17 @@ export const SKILLS = [
     items: [
       "Node.js / Express",
       "REST APIs",
-      "Authentication",
-      "Server Architecture",
+      "Authentication"
     ],
   },
   {
     category: "Database",
     icon: Database,
-    items: ["PostgreSQL", "MySQL", "Database Design", "Query Optimization"],
+    items: ["PostgreSQL", "MySQL"],
   },
   {
     category: "Tools",
     icon: Wrench,
-    items: ["Git / GitHub", "VS Code", "Postman", "CI/CD Basics"],
+    items: ["Git / GitHub", "VS Code", "Postman"],
   },
 ];

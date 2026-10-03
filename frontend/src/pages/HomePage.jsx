@@ -13,7 +13,7 @@ function HomePage() {
   return (
     <div>
       <SEO
-        title="Khalid Abdulkerim — Full Stack Developer"
+        title="Kalid Abdulkerim — Full Stack Developer"
         description="Full Stack Developer building scalable, production-ready web applications with clean architecture."
       />
       <Hero />
