@@ -16,3 +16,64 @@ body {
 :focus-visible {
   @apply outline-2 outline-amber-700 outline-offset-2;
 }
+/* Profile photo: rotating amber ring + gentle float */
+.avatar-float {
+  animation: avatar-float 5s ease-in-out infinite;
+}
+
+.avatar-ring {
+  position: relative;
+  isolation: isolate; /* keeps the ring layers behind the photo, inside this box */
+  border-radius: 9999px;
+}
+
+/* The spinning amber sweep (outer edge of the ring) */
+.avatar-ring::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  z-index: -2;
+  border-radius: 9999px;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0 30%,
+    #b45309 55%,
+    #fbbf24 80%,
+    transparent 100%
+  );
+  animation: avatar-spin 6s linear infinite;
+}
+
+/* Page-colored gap between the ring and the photo; this must match your background (#0a0a0a) */
+.avatar-ring::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  z-index: -1;
+  border-radius: 9999px;
+  background: #0a0a0a;
+}
+
+@keyframes avatar-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes avatar-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Visitors who ask their device for less motion get a still photo */
+@media (prefers-reduced-motion: reduce) {
+  .avatar-float,
+  .avatar-ring::before {
+    animation: none;
+  }
+}

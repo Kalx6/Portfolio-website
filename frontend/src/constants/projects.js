@@ -1,6 +1,6 @@
-import netflix from "../assets/images/netflix.png";
+import netflix from "../assets/images/netflix.webp";
 import chatgpt from "../assets/images/ChatGPT.png";
-import forum from "../assets/images/forum.png";
+import forum from "../assets/images/forum.webp";
 
 export const PROJECTS = [
   {

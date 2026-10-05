@@ -14,12 +14,20 @@ function Hero() {
       id="home"
       className="flex flex-col items-center text-center px-6 py-24 max-w-4xl mx-auto"
     >
-      <motion.img
-        {...fadeUp(0)}
-        src={profileImage}
-        alt="Portrait of Khalid Abdulkerim"
-        className="w-24 h-24 rounded-full object-cover border border-neutral-800 mb-6"
-      />
+      <motion.div {...fadeUp(0)} className="mb-6 md:mb-8">
+        <div className="avatar-float">
+          <div className="avatar-ring">
+            <img
+              src={profileImage}
+              alt="Portrait of Kalid Abdulkerim"
+              width={256}
+              height={256}
+              decoding="async"
+              className="block w-24 h-24 sm:w-40 sm:h-40 md:w-64 md:h-64 rounded-full object-cover"
+            />
+          </div>
+        </div>
+      </motion.div>
 
       <motion.p
         {...fadeUp(0.1)}
