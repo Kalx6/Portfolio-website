@@ -24,8 +24,9 @@ function ProjectImage({ image, title }) {
 }
 
 function FeaturedProjects() {
-  const featuredProject = PROJECTS.find((project) => project.featured);
+  const featuredProjects = PROJECTS.filter((project) => project.featured);
   const otherProjects = PROJECTS.filter((project) => !project.featured);
+  const isSingle = otherProjects.length === 1;
 
   return (
     <section id="projects" className="px-6 py-24 max-w-6xl mx-auto">
@@ -36,8 +37,9 @@ function FeaturedProjects() {
         Featured Projects
       </motion.h2>
 
-      {featuredProject && (
+      {featuredProjects.map((featuredProject, index) => (
         <motion.div
+          key={featuredProject.id}
           {...fadeUp(0.1)}
           className="bg-neutral-900 border border-neutral-800 rounded-xl overflow-hidden grid md:grid-cols-2 mb-8"
         >
@@ -87,14 +89,16 @@ function FeaturedProjects() {
             </div>
           </div>
         </motion.div>
-      )}
+      ))}
 
       <div className="grid sm:grid-cols-2 gap-6">
         {otherProjects.map((project, index) => (
           <motion.div
             key={project.id}
             {...fadeUp(0.2 + index * 0.1)}
-            className="group bg-neutral-900 border border-neutral-800 rounded-xl overflow-hidden hover:-translate-y-1 transition-transform duration-200"
+            className={`group bg-neutral-900 border border-neutral-800 rounded-xl overflow-hidden hover:-translate-y-1 transition-transform duration-200 ${
+              isSingle ? "sm:col-span-2 sm:max-w-lg sm:mx-auto sm:w-full" : ""
+            }`}
           >
             <div className="h-40">
               <ProjectImage image={project.image} title={project.title} />

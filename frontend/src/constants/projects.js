@@ -1,4 +1,3 @@
-import netflix from "../assets/images/netflix.webp";
 import chatgpt from "../assets/images/ChatGPT.png";
 import forum from "../assets/images/forum.webp";
 
@@ -28,25 +27,13 @@ export const PROJECTS = [
 
   {
     id: "chatgpt-clone",
-    featured: false,
+    featured: true,
     title: "ChatGPT Clone",
     description:
-      "A modern AI chat application that delivers a conversational experience similar to ChatGPT. Features a clean responsive interface, dynamic messaging, API integration, and conversation history management.",
-    tech: ["React", "JavaScript", "CSS", "REST API"],
+      "A full-stack AI chat application with secure email and password authentication. Each user gets private, persistent chat history, powered by the Gemini API, with markdown and code highlighting, a responsive collapsible sidebar, and a rate-limited API.",
+    tech: ["React", "Node.js", "Express", "MySQL", "JWT", "Gemini API"],
     image: chatgpt,
     liveDemo: "https://gpt-clone-seven-xi.vercel.app/",
     github: "https://github.com/Kalx6/GPT-Clone",
-  },
-
-  {
-    id: "netflix-clone",
-    featured: false,
-    title: "Netflix Clone",
-    description:
-      "A responsive Netflix-inspired streaming interface that displays trending and categorized movies using a movie API. Built with reusable React components and modern responsive design principles.",
-    tech: ["React", "JavaScript", "CSS", "Movie API"],
-    image: netflix,
-    liveDemo: "https://netflix-clone-lilac-three-24.vercel.app/",
-    github: "https://github.com/Kalx6/Netflix-clone",
   },
 ];
