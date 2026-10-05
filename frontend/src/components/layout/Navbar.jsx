@@ -25,13 +25,18 @@ function Navbar() {
       <nav className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-3 items-center px-6 py-4">
         <a
           href="#home"
-          className="flex items-center gap-2 text-neutral-50 font-semibold justify-self-start"
+          aria-label="Kalid Abdulkerim, back to top"
+          className="group flex items-center gap-3 justify-self-start"
         >
-          <img src="/logo-1.png" alt="KA logo" className="w-9 h-9 rounded-md" />
+          <img src="/logo-1.png" alt="" className="w-9 h-9 rounded-md" />
 
-          <span>Kalid Abdulkerim</span>
+          <span className="text-xl font-bold tracking-tight text-neutral-50">
+            Kalma
+            <span className="font-mono text-amber-600 transition-colors duration-200 group-hover:text-amber-500">
+              .dev
+            </span>
+          </span>
         </a>
-
         <ul className="hidden md:flex items-center gap-8 justify-self-center">
           {NAV_LINKS.map((link) => (
             <li key={link.href}>
