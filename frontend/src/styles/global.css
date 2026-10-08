@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: "Poppins", -apple-system, BlinkMacSystemFont, ui-sans-serif, system-ui, sans-serif;
 }
 
 html {
