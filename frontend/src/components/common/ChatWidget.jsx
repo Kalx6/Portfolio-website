@@ -1,23 +1,34 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MessageCircle, X, Send, Loader2 } from "lucide-react";
-import { sendChatMessage } from "../../services/chatService.js";
+import { MessageCircle, X, Send } from "lucide-react";
+import { streamChatMessage } from "../../services/chatService.js";
 
 function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
     {
       role: "assistant",
-      text: "Hi! I'm an AI assistant that can answer questions about Khalid — his skills, projects, and experience. What would you like to know?",
+      text: "Hi! I'm an AI assistant that can answer questions about Kalid — his skills, projects, and experience. What would you like to know?",
     },
   ]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const messagesEndRef = useRef(null);
+  const abortRef = useRef(null);
+
+  // Cancel an in-flight answer if the widget unmounts
+  useEffect(() => () => abortRef.current?.abort(), []);
+
+  const updateLastMessage = (update) =>
+    setMessages((prev) => [
+      ...prev.slice(0, -1),
+      update(prev[prev.length - 1]),
+    ]);
 
   // Auto-scroll to the latest message whenever the conversation updates.
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    messagesEndRef.current?.scrollIntoView({
+      behavior: isLoading ? "auto" : "smooth",
+    });
   }, [messages, isLoading]);
 
   const handleSubmit = async (e) => {
@@ -25,22 +36,41 @@ function ChatWidget() {
     const question = input.trim();
     if (!question || isLoading) return;
 
-    setMessages((prev) => [...prev, { role: "user", text: question }]);
+    // The user's message, then an empty assistant message that the stream fills in
+    setMessages((prev) => [
+      ...prev,
+      { role: "user", text: question },
+      { role: "assistant", text: "", streaming: true },
+    ]);
     setInput("");
     setIsLoading(true);
 
+    const controller = new AbortController();
+    abortRef.current = controller;
+
     try {
-      const response = await sendChatMessage(question);
-      setMessages((prev) => [
-        ...prev,
-        { role: "assistant", text: response.data.answer },
-      ]);
+      await streamChatMessage(question, {
+        signal: controller.signal,
+        onChunk: (text) =>
+          updateLastMessage((last) => ({ ...last, text: last.text + text })),
+      });
+      updateLastMessage((last) => ({ ...last, streaming: false }));
     } catch (error) {
+      if (error.name === "AbortError") return;
+
       const message =
-        error.response?.status === 429
+        error.status === 429
           ? "You've sent quite a few messages — please wait a bit before continuing."
           : "Sorry, something went wrong. Please try again.";
-      setMessages((prev) => [...prev, { role: "assistant", text: message }]);
+
+      updateLastMessage((last) => ({
+        ...last,
+        streaming: false,
+        // Keep what already arrived; only replace an empty bubble
+        text: last.text
+          ? `${last.text}\n\n(The response was interrupted. Please try again.)`
+          : message,
+      }));
     } finally {
       setIsLoading(false);
     }
@@ -69,7 +99,7 @@ function ChatWidget() {
             {/* Header */}
             <div className="px-5 py-4 border-b border-neutral-800">
               <p className="text-neutral-50 font-semibold text-sm">
-                Ask about Khalid
+                Ask about Kalid
               </p>
               <p className="text-neutral-400 text-xs">
                 AI assistant · powered by RAG + Gemini
@@ -84,13 +114,30 @@ function ChatWidget() {
                   className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}
                 >
                   <p
-                    className={`max-w-[85%] text-sm rounded-lg px-3.5 py-2.5 ${
+                    className={`max-w-[85%] text-sm rounded-lg px-3.5 py-2.5 whitespace-pre-wrap ${
                       message.role === "user"
                         ? "bg-amber-700 text-neutral-50"
                         : "bg-neutral-950 text-neutral-300 border border-neutral-800"
                     }`}
                   >
-                    {message.text}
+                    {message.streaming && !message.text ? (
+                      <span
+                        className="flex items-center gap-1 h-5"
+                        role="status"
+                        aria-label="Assistant is typing"
+                      >
+                        <span className="typing-dot w-1.5 h-1.5 rounded-full bg-amber-600" />
+                        <span className="typing-dot w-1.5 h-1.5 rounded-full bg-amber-600" />
+                        <span className="typing-dot w-1.5 h-1.5 rounded-full bg-amber-600" />
+                      </span>
+                    ) : (
+                      <>
+                        {message.text}
+                        {message.streaming && (
+                          <span className="stream-cursor" aria-hidden="true" />
+                        )}
+                      </>
+                    )}
                   </p>
                 </div>
               ))}

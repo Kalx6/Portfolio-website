@@ -18,10 +18,10 @@ function Footer() {
   return (
     <footer className="border-t border-neutral-800 px-6 py-8">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
-        <p className="text-neutral-50 font-semibold">Khalid Abdulkerim</p>
+        <p className="text-neutral-50 font-semibold">Kalid Abdulkerim</p>
 
         <p className="text-neutral-400 text-xs order-3 md:order-2">
-          © {currentYear} Khalid Abdulkerim. Engineered for performance.
+          © {currentYear} Kalid Abdulkerim. Engineered for performance.
         </p>
 
         <div className="flex items-center gap-6 order-2 md:order-3">
