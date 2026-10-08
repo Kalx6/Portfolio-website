@@ -13,6 +13,7 @@ function ChatWidget() {
   ]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const messagesEndRef = useRef(null);
   const abortRef = useRef(null);
 
   // Cancel an in-flight answer if the widget unmounts
