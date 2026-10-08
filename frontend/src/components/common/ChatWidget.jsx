@@ -142,18 +142,6 @@ function ChatWidget() {
                   </p>
                 </div>
               ))}
-
-              {isLoading && (
-                <div className="flex justify-start">
-                  <div className="bg-neutral-950 border border-neutral-800 rounded-lg px-3.5 py-2.5">
-                    <Loader2
-                      size={14}
-                      className="animate-spin text-neutral-400"
-                    />
-                  </div>
-                </div>
-              )}
-
               <div ref={messagesEndRef} />
             </div>
 
