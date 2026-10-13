@@ -22,7 +22,7 @@ function About() {
         className="space-y-6 text-neutral-300 text-base md:text-lg leading-relaxed"
       >
         <p>
-          I'm Khalid Abdulkerim, a Full Stack Web Developer who enjoys turning
+          I'm Kalid Abdulkerim, a Full Stack Web Developer who enjoys turning
           ideas into practical, user-focused web applications. My journey began
           with frontend development, where I built responsive and interactive
           interfaces, and gradually expanded into backend development using
